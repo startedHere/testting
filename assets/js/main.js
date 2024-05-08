@@ -219,6 +219,8 @@ const contactMessage = document.getElementById('contactBeta-message');
 
 const submitButton = document.getElementById('submitButton');
 const submitTextSpan = document.getElementById('submitText');
+// const loadingTextSpan = document.getElementById('loadingText');
+const loadingTextSpan = document.querySelector('.loading');
 
 // submitButton.addEventListener('click', function (event) {
 // 	event.preventDefault();
@@ -226,24 +228,66 @@ const submitTextSpan = document.getElementById('submitText');
 // 	contactForm.dispatchEvent(new Event('submit'));
 // });
 
-// Add a loading state variable
+//_ Add a loading state variable
 let isLoading = false;
 
-// Function to toggle loading state and update UI accordingly
+//_ Function to toggle loading state and update UI accordingly
 const toggleLoadingState = () => {
 	isLoading = !isLoading;
 
-	if (submitTextSpan) {
-		submitTextSpan.textContent = isLoading ? 'Loading' : 'Submit';
-	}
+	// if (submitTextSpan) {
+	// 	submitTextSpan.textContent = isLoading ? 'Loading' : 'Submit';
+	// }
 
-	// Toggle loading animation or make UI adjustments here
-	if (isLoading) {
-		submitButton.classList.add('loading-start');
-		submitButton.classList.add('loading-progress');
-	} else {
+	//_ Function to show loading indicators or make UI adjustments when loading starts
+	const showLoadingIndicators = () => {
+		// Add classes to indicate loading start and progress
+		submitButton.classList.add('loading-start', 'loading-progress');
+
+		// Optionally, hide the 'submit' text span
+		submitTextSpan.style.display = 'none';
+	};
+
+	//_ Function to hide loading indicators or make UI adjustments when loading ends
+	const hideLoadingIndicators = () => {
+		// Remove unnecessary classes
+		submitButton.classList.remove('loading-start', 'loading-progress');
+
+		// Add the 'loading-end' class to trigger the end animation
 		submitButton.classList.add('loading-end');
-		submitButton.classList.remove('loading-start', 'loading-progress', 'loading-end');
+
+		// Schedule the removal of the 'loading-end' class after a delay
+		setTimeout(() => {
+			submitButton.classList.remove('loading-end');
+
+			// Optionally, show the 'submit' text span after the loading animation completes
+			submitTextSpan.style.display = 'inline';
+		}, 1500); // Delay before removing 'loading-end' class
+	};
+
+	//# Toggle loading animation or make UI adjustments here
+	if (isLoading) {
+		// submitButton.classList.add('loading-progress');
+
+		// submitButton.classList.add('loading-start', 'loading-progress');
+		//# Show loading indicators or disable form elements
+		showLoadingIndicators();
+	} else {
+		// submitButton.classList.add('loading-end');
+		// submitButton.classList.remove('loading-start', 'loading-progress', 'loading-end');
+
+		// submitButton.classList.remove('loading-start', 'loading-progress'); // Remove unnecessary classes
+		//# Hide loading indicators or enable form elements
+		hideLoadingIndicators();
+
+		// setTimeout(() => {
+		// 	submitButton.classList.add('loading-end');
+		// 	setTimeout(() => {
+		// 		submitButton.classList.remove('loading-end');
+		// 		// submitTextSpan.style.display = 'none';
+		// 	}, 1500); // Delay before removing loading-end class
+		// 	submitTextSpan.style.display = 'none';
+		// }, 500); // Delay before adding loading-end class
 	}
 };
 
@@ -318,6 +362,7 @@ const sendEmail = async () => {
 		return true; // Indicate success
 	} catch (error) {
 		console.error('Error sending email:', error);
+		showMessage('Failed to send email. Please try again later.', true); // Display error message to user
 		return false; // Indicate failure
 	}
 };
@@ -340,13 +385,13 @@ const handleFormSubmit = async event => {
 	//#  ('e' or 'event' whichever one used in your function is mostly a Variable name)
 	event.preventDefault();
 
-	// Check if already loading, prevent multiple submissions
+	//Check if already loading, prevent multiple submissions
 	if (isLoading) {
 		return;
 	}
 
 	// Set loading state to true
-	// toggleLoadingState();
+	toggleLoadingState();
 
 	try {
 		// Attempt to send the email
@@ -367,6 +412,13 @@ const handleFormSubmit = async event => {
 		console.error('Error handling form submission:', error);
 		showMessage('An error occurred during form submission', true);
 	} finally {
+		// Revert back to 'Submit' text after email is sent or error occurs
+		console.log(submitTextSpan);
+		submitTextSpan.style.display = 'none'; // Show 'submit' text
+		// submitTextSpan.style.display = 'none';
+		loadingTextSpan.style.display = 'inline'; // Hide 'loading' text
+		// submitTextSpan.style.display = 'inline';
+
 		// Reset loading state after handling form submission
 		toggleLoadingState();
 	}

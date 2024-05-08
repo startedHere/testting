@@ -1360,10 +1360,18 @@ input[type='checkbox']:checked ~ .menu .bottom {
 
 /*! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 .test__beta {
-	box-sizing: border-box;
-	display: block;
 	position: relative;
-	/* margin: 5rem; */
+
+	/* box-sizing: border-box; */
+	/* display: block; */
+	/* display: inline-block; */
+
+	/* max-width: 300px;  */
+	/* Set maximum width to 300 pixels */
+	/* max-height: 200px;  */
+	/* Set maximum height to 200 pixels */
+	max-height: 120px;
+
 	/* padding-top: -15rem; */
 	/* padding-bottom: -7rem; */
 
@@ -1372,8 +1380,9 @@ input[type='checkbox']:checked ~ .menu .bottom {
 	text-align: center;
 
 	/* background: #292a38; */
-	background: red;
+	/* background: red; */
 	/* background: transparent; */
+	background: none;
 }
 /* .test__beta a { */
 .test__beta span {
@@ -1384,7 +1393,9 @@ input[type='checkbox']:checked ~ .menu .bottom {
 	transition: color 0.5s;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 20px;
-	top: 100px;
+	/* top: 100px; */
+	top: 30px;
+
 	font-weight: 100;
 	display: block;
 	position: absolute;
@@ -1408,6 +1419,7 @@ input[type='checkbox']:checked ~ .menu .bottom {
 /* a.loading { */
 span.loading {
 	color: rgba(255, 255, 255, 0);
+	/* color: yellow; */
 	/* top: 4rem; */
 }
 
@@ -1454,6 +1466,7 @@ span.feedback:after {
 	-o-transform: translate3d(0, 0, 0);
 	-ms-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
+	top: -70px;
 }
 
 .test__beta-svg rect {
