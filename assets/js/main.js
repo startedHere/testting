@@ -435,16 +435,32 @@ const scrollUp = () => {
 };
 window.addEventListener('scroll', scrollUp);
 
+/*
 //! Scroll Sections Active Link...
 /////////////////////////////////////////
 const sections = document.querySelectorAll('section[id]');
 
+// const header = document.querySelector('.header'); // Assuming the header has a class of 'header'
+const header = document.querySelector('.nav'); // Assuming the header has a class of 'header'
+
+const getHeaderHeight = () => (header ? header.offsetHeight : 0);
+
+// Function to get the dynamic offset value
+// const getOffset = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height'));
+
 const scrollActive = () => {
 	const scrollDown = window.scrollY;
 
+	const headerHeight = getHeaderHeight(); // Get the current header height
+
+	// const offset = getOffset();
+	// Get the dynamic offset value
+
 	sections.forEach(current => {
 		const sectionHeight = current.offsetHeight,
-			sectionTop = current.offsetTop - 58,
+			// sectionTop = current.offsetTop - 75,
+			// sectionTop = current.offsetTop - offset, // Use the dynamic offset
+			sectionTop = current.offsetTop - headerHeight, // Use the dynamic header height
 			sectionId = current.getAttribute('id'),
 			sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']');
 
@@ -458,6 +474,77 @@ const scrollActive = () => {
 	});
 };
 
+window.addEventListener('scroll', scrollActive);
+*/
+
+document.addEventListener('DOMContentLoaded', () => {
+	const sections = document.querySelectorAll('section');
+	const navLinks = document.querySelectorAll('.nav__link');
+
+	// This function will handle the logic to determine the current section in view and update the active link in the navigation.
+	function onScroll() {
+		// Initialize a variable to keep track of the currently visible section
+		let currentSection = '';
+		// This variable will store the ID of the section currently in view.
+
+		// Loop through each section
+		sections.forEach(section => {
+			// Get the vertical offset of the section from the top of the page
+			const sectionTop = section.offsetTop;
+
+			// Get the height of the section
+			const sectionHeight = section.clientHeight;
+
+			// Log the top position and height of each section for debugging purposes
+			console.log(`Section ${section.id}: top = ${sectionTop}, height = ${sectionHeight}`);
+
+			// Check if the current scroll position is within the section
+			// This condition checks if the top of the section is within 1/3 of the section's height from the viewport
+			if (window.scrollY >= sectionTop - sectionHeight / 4) {
+				// If the condition is met, set currentSection to the ID of the section
+				currentSection = section.getAttribute('id');
+			}
+		});
+
+		// Log the ID of the current section in view for debugging purposes
+		console.log('Current section:', currentSection);
+
+		// Loop through each navigation link
+		navLinks.forEach(link => {
+			// Remove the 'active-link' class from the link to reset it
+			link.classList.remove('active-link');
+
+			// Check if the href attribute of the link contains the current section's ID
+			if (link.getAttribute('href').includes(currentSection)) {
+				// If it does, add the 'active-link' class to the link to highlight it
+				link.classList.add('active-link');
+			}
+		});
+	}
+
+	// Adds the onScroll function as an event listener for the window's scroll event
+	window.addEventListener('scroll', onScroll);
+});
+
+//! /////////////////////////////////////////////////////////////////////////////////
+
+// const scrollActive = () => {
+// 	const scrollY = window.pageYOffset;
+
+// 	sections.forEach(current => {
+// 		const sectionHeight = current.offsetHeight,
+// 			sectionTop = current.offsetTop - 58,
+// 			sectionId = current.getAttribute('id'),
+// 			sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']');
+
+// 		if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+// 			sectionsClass.classList.add('active-link');
+// 		} else {
+// 			sectionsClass.classList.remove('active-link');
+// 		}
+// 	});
+// };
+
 // _Use lodash debounce to avoid frequent calls during scrolling
 // const debounceScrollActive = _.debounce(scrollActive, 200);
 //# Adjust the debounce time as needed
@@ -465,7 +552,92 @@ const scrollActive = () => {
 //_Add the event listener with the debounced function
 // window.addEventListener('scroll', debounceScrollActive);
 
-window.addEventListener('scroll', scrollActive);
+// window.addEventListener('scroll', scrollActive);
+
+/*
+//! //////////////////////////////////////////////////////////////////////////////////
+// Wait for the DOM to be fully loaded before executing the JavaScript code
+document.addEventListener('DOMContentLoaded', function () {
+	// Variable to store the timeout ID for debouncing resize events
+	let resizeTimeout;
+
+	// Iterate through all elements with the class 'clickable-div'
+	document.querySelectorAll('.clickable-div').forEach(function (div) {
+		// Add a click event listener to each clickable div
+		div.addEventListener('click', function () {
+			// Check if the div has the 'loading-start' class
+			if (div.classList.contains('loading-start')) {
+				// Check if the div also has the 'loading-end' class
+				if (div.classList.contains('loading-end')) {
+					// If yes, remove all classes from the div
+					div.removeAttribute('class');
+				}
+			} else {
+				// If the div doesn't have 'loading-start' class, add classes with delays
+				setTimeout(function () {
+					div.classList.add('loading-start');
+				}, 0);
+
+				setTimeout(function () {
+					div.classList.add('loading-progress');
+				}, 500);
+
+				setTimeout(function () {
+					div.classList.add('loading-end');
+				}, 1500);
+			}
+		});
+	});
+
+	// Function to handle resizing of the window
+	const handleResize = function () {
+		// Adjust the margin-top of the body based on the window height
+		document.body.style.marginTop = ~~((window.innerHeight - 260) / 2) + 'px';
+	};
+
+	// Function to debounce the resize event to improve performance
+	const debounceResize = function () {
+		// Clear any existing timeout
+		clearTimeout(resizeTimeout);
+		// Set a new timeout for resizing after 250 milliseconds
+		resizeTimeout = setTimeout(handleResize, 250);
+	};
+
+	// Add event listener for the window resize event with debouncing
+	window.addEventListener('resize', debounceResize);
+
+	// Initial call to handleResize to set the initial margin-top
+	handleResize();
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+	document.querySelectorAll('.test__beta').forEach(function (div) {
+		div.addEventListener('click', function () {
+			if (div.classList.contains('loading-start')) {
+				if (div.classList.contains('loading-end')) {
+					div.removeAttribute('class');
+				}
+			} else {
+				setTimeout(function () {
+					div.classList.add('loading-start');
+				}, 0);
+
+				setTimeout(function () {
+					div.classList.add('loading-progress');
+				}, 500);
+
+				setTimeout(function () {
+					div.classList.add('loading-end');
+				}, 1500);
+			}
+		});
+	});
+});
+
+//! /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
+
+//_ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*
 //! //////////////////////////////////////////////////////////////////////////////////

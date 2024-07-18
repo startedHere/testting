@@ -1688,7 +1688,7 @@ path#bottom {
 	transform: translateY(-0.25rem);
 }
 
-/* Show scroll */
+/*! Show scroll */
 .show-scroll {
 	bottom: 3rem;
 }
