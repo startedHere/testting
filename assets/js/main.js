@@ -38,6 +38,7 @@ window.addEventListener('scroll', blurHeader);
 ///////////////////////////////////////////////
 //_ Using An IIFE....
 
+/*
 (function () {
 	// Get the element with ID 'mandala'
 	const mandalaEffect = document.getElementById('mandala');
@@ -62,7 +63,79 @@ window.addEventListener('scroll', blurHeader);
 		document.addEventListener('visibilitychange', handleVisibilityChange, false);
 	}
 })();
+*/
 
+/*
+(function () {
+	// Get the element with ID 'mandala'
+	const mandalaEffect = document.getElementById('mandala');
+
+	// Debounce function to limit how often a function is called
+	function debounce(func, wait) {
+		let timeout;
+		return function (...args) {
+			clearTimeout(timeout);
+			timeout = setTimeout(() => func.apply(this, args), wait);
+		};
+	}
+
+	// Function to handle visibility change
+	function handleVisibilityChange() {
+		if (!document.hidden) {
+			// If the document is visible, add 'animated' class
+			mandalaEffect.classList.add('animated');
+		} else {
+			// If the document is hidden, remove 'animated' class
+			mandalaEffect.classList.remove('animated');
+		}
+	}
+
+	// Debounce the visibility change handler
+	const handleVisibilityChangeDebounced = debounce(handleVisibilityChange, 700);
+
+	// Check if the 'hidden' property is supported in the document
+	if ('hidden' in document) {
+		// Trigger the animation immediately on page load
+		handleVisibilityChange();
+
+		// Add event listener for visibility change
+		document.addEventListener('visibilitychange', handleVisibilityChangeDebounced, false);
+	}
+})();
+*/
+
+//_ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+document.addEventListener('DOMContentLoaded', function () {
+	function setupIntersectionObserver(mandalaEffect) {
+		const observer = new IntersectionObserver(
+			entries => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						mandalaEffect.classList.add('animated');
+					} else {
+						mandalaEffect.classList.remove('animated');
+					}
+				});
+			},
+			{ threshold: 0.2 } //  Start Animation based on the percentage of it that is On-focus(In View-port)
+		);
+
+		observer.observe(mandalaEffect);
+	}
+
+	function initMandalaEffect() {
+		const mandalaEffect = document.getElementById('mandala');
+
+		if (mandalaEffect) {
+			// Setup the Intersection Observer
+			setupIntersectionObserver(mandalaEffect);
+		}
+	}
+
+	initMandalaEffect();
+});
+
+//! ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // })(window.Mozilla);
 // 	'undefined' != typeof document.hidden && (document.addEventListener('visibilitychange', i, !1), window.Mozilla.run(i));
 
@@ -721,3 +794,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //! /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
+
+// ! Activate Dark Mode...
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+document.addEventListener('DOMContentLoaded', () => {
+	const toggleButton = document.getElementById('theme-button');
+	const navbar = document.getElementById('navbar');
+	const themeName = document.querySelector('.change-theme-name');
+
+	toggleButton.addEventListener('click', () => {
+		navbar.classList.toggle('dark-theme');
+		themeName.textContent = navbar.classList.contains('dark-theme') ? 'Light' : 'Dark';
+	});
+});

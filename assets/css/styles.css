@@ -90,34 +90,62 @@
 }
 
 /*!========== Variables Dark Theme ==========*/
+nav.dark-theme {
+	--first-color-second: hsl(var(--hue-color), 54%, 12%);
+	--title-color: hsl(var(--hue-color), 24%, 95%);
+	--text-color: hsl(var(--hue-color), 8%, 75%);
+	--input-color: hsl(var(--hue-color), 29%, 16%);
+	--body-color: hsl(var(--hue-color), 29%, 12%);
+	--scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
+	--scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+
+	/* background-color: hsl(0, 0%, 100%); */
+}
+
+nav.dark-theme .nav__menu {
+	background-color: hsl(0, 0%, 100%);
+	backdrop-filter: blur(24px);
+}
+
+nav.dark-theme .nav__logo,
+nav.dark-theme .nav__link,
+nav.dark-theme .change-theme,
+nav.dark-theme .change-theme-name {
+	color: var(--text-color);
+}
+
+nav.dark-theme .active-link {
+	/* color: var(--first-color); */
+	color: red;
+}
 
 /* _ LIGHT and DARK THEME for Only the NAV MENU with a Message ==> **Something Something this is All You are Getting**  */
 
 /*!========== Button Dark/Light ==========*/
-/*
-.nav__dark-mode {
+
+/* .nav__dark-mode {
 	display: flex;
 	align-items: center;
 	column-gap: 0.5rem;
 	position: absolute;
 	left: 3rem;
 	bottom: 4rem;
-}
-*/
+} */
 
-/*
-.change-theme-name,
-.change-theme {
+/* .change-theme,
+.change-theme-name {
 	color: var(--title-color);
 	font-weight: var(--font-medium);
-}
-*/
+} */
 
-/*
-.change-theme {
+/* .change-theme {
 	cursor: pointer;
-}
-*/
+	font-size: 1rem;
+} */
+
+/* .change-theme-name {
+	font-size: var(--small-font-size);
+} */
 
 /*!=============== BASE ===============*/
 * {
@@ -337,9 +365,10 @@ button {
 	bottom: 4rem;
 }
 
-.change-theme-name,
-.change-theme {
+.change-theme,
+.change-theme-name {
 	color: var(--title-color);
+	font-size: var(--normal-font-size);
 	font-weight: var(--font-medium);
 }
 
