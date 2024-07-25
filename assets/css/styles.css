@@ -111,10 +111,6 @@ nav.light-theme .nav__menu {
 /* nav.dark-theme .nav__logo, */
 nav.light-theme .nav__link,
 nav.light-theme .change-theme {
-	/* color: var(--text-color); */
-	/* color: var(--container-color); */
-	/* color: var(--body-color); */
-
 	color: hsl(228, 15%, 25%);
 }
 
@@ -124,15 +120,13 @@ nav.light-theme .change-theme-name {
 
 nav.light-theme .active-link {
 	color: var(--first-color);
-	/* color: var(--container-color); */
 }
 
 .additional-text {
 	display: block; /* Ensure it starts on a new line */
-	/* margin-top: 4px; Add some space above the additional text */
-	font-size: 12px; /* Adjust the font size as needed */
-	color: inherit; /* Inherit color from parent */
-	position: relative; /* Use relative positioning */
+	font-size: 12px;
+	color: inherit;
+	position: relative;
 	top: 10px; /* Move the element down by 20px */
 }
 
