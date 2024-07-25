@@ -797,13 +797,69 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // ! Activate Dark Mode...
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
 document.addEventListener('DOMContentLoaded', () => {
 	const toggleButton = document.getElementById('theme-button');
 	const navbar = document.getElementById('navbar');
 	const themeName = document.querySelector('.change-theme-name');
+	const themeIcon = document.getElementById('theme-button');
 
 	toggleButton.addEventListener('click', () => {
-		navbar.classList.toggle('dark-theme');
-		themeName.textContent = navbar.classList.contains('dark-theme') ? 'Light' : 'Dark';
+		navbar.classList.toggle('light-theme');
+		const isLightTheme = navbar.classList.contains('light-theme');
+		themeName.textContent = isLightTheme ? 'Light Blah Blah Blahh' : 'Dark';
+		// themeName.textContent = navbar.classList.contains('dark-theme') ? 'Light' : 'Dark';
+		themeIcon.className = isLightTheme ? 'ri-sun-line change-theme blah blah blah' : 'ri-moon-line change-theme blah blah';
+	});
+});
+*/
+
+document.addEventListener('DOMContentLoaded', () => {
+	const toggleButton = document.getElementById('theme-button');
+	const navbar = document.getElementById('navbar');
+	const navDarkMode = document.querySelector('.nav__dark-mode');
+	const themeIcon = document.getElementById('theme-button');
+
+	toggleButton.addEventListener('click', () => {
+		navbar.classList.toggle('light-theme');
+		const isLightTheme = navbar.classList.contains('light-theme');
+
+		// Remove the existing text element if it exists
+		const existingThemeName = document.querySelector('.change-theme-name');
+		if (existingThemeName) {
+			existingThemeName.remove();
+		}
+
+		// Add the text element based on the theme
+		const themeName = document.createElement('span');
+		themeName.classList.add('change-theme-name');
+		if (isLightTheme) {
+			themeName.textContent = 'Light';
+			// themeName.classList.add('light-theme-text');
+			// You can add additional text contents here
+			const additionalText = document.createElement('div');
+			additionalText.textContent = `Nav is all You Get - Enjoy The Bright Side!!  😂`;
+
+			additionalText.classList.add('additional-text');
+			themeName.appendChild(additionalText);
+		} else {
+			themeName.textContent = 'Dark';
+			// themeName.classList.add('dark-theme-text');
+			// You can add additional text contents here
+			// const additionalText = document.createElement('span');
+			// additionalText.textContent = ' - Embrace the darkness!';
+			// additionalText.classList.add('additional-text');
+			// themeName.appendChild(additionalText);
+
+			const additionalText = document.createElement('div');
+			additionalText.textContent = `Nothing to See Here!!  🥱`;
+
+			additionalText.classList.add('additional-text');
+			themeName.appendChild(additionalText);
+		}
+		navDarkMode.appendChild(themeName);
+
+		// Update the icon class based on the theme
+		themeIcon.className = isLightTheme ? 'ri-sun-line change-theme' : 'ri-moon-line change-theme';
 	});
 });

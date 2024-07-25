@@ -89,8 +89,8 @@
 	}
 }
 
-/*!========== Variables Dark Theme ==========*/
-nav.dark-theme {
+/*!========== Variables Light Theme ==========*/
+nav.light-theme {
 	--first-color-second: hsl(var(--hue-color), 54%, 12%);
 	--title-color: hsl(var(--hue-color), 24%, 95%);
 	--text-color: hsl(var(--hue-color), 8%, 75%);
@@ -102,21 +102,38 @@ nav.dark-theme {
 	/* background-color: hsl(0, 0%, 100%); */
 }
 
-nav.dark-theme .nav__menu {
-	background-color: hsl(0, 0%, 100%);
+nav.light-theme .nav__menu {
+	/* background-color: hsl(0, 0%, 100%); */
+	background-color: hsla(0, 0%, 100%, 0.45);
 	backdrop-filter: blur(24px);
 }
 
-nav.dark-theme .nav__logo,
-nav.dark-theme .nav__link,
-nav.dark-theme .change-theme,
-nav.dark-theme .change-theme-name {
-	color: var(--text-color);
+/* nav.dark-theme .nav__logo, */
+nav.light-theme .nav__link,
+nav.light-theme .change-theme {
+	/* color: var(--text-color); */
+	/* color: var(--container-color); */
+	/* color: var(--body-color); */
+
+	color: hsl(228, 15%, 25%);
 }
 
-nav.dark-theme .active-link {
-	/* color: var(--first-color); */
-	color: red;
+nav.light-theme .change-theme-name {
+	color: hsl(228, 15%, 25%);
+}
+
+nav.light-theme .active-link {
+	color: var(--first-color);
+	/* color: var(--container-color); */
+}
+
+.additional-text {
+	display: block; /* Ensure it starts on a new line */
+	/* margin-top: 4px; Add some space above the additional text */
+	font-size: 12px; /* Adjust the font size as needed */
+	color: inherit; /* Inherit color from parent */
+	position: relative; /* Use relative positioning */
+	top: 10px; /* Move the element down by 20px */
 }
 
 /* _ LIGHT and DARK THEME for Only the NAV MENU with a Message ==> **Something Something this is All You are Getting**  */
@@ -324,7 +341,7 @@ button {
 		/* right: 0; */
 		right: -100%; /* For nav__close menu */
 		background-color: hsla(0, 0%, 10%, 0.3);
-		width: 75%;
+		width: 70%;
 		height: 100%;
 		padding: 4.5rem 0 0 3rem;
 		backdrop-filter: blur(24px);
@@ -357,9 +374,9 @@ button {
 
 /*_ Button Dark/Light */
 .nav__dark-mode {
-	display: flex;
-	align-items: center;
-	column-gap: 0.5rem;
+	/* display: flex; */
+	/* align-items: center; */
+	/* column-gap: 0.5rem; */
 	position: absolute;
 	left: 3rem;
 	bottom: 4rem;
