@@ -852,7 +852,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			// themeName.appendChild(additionalText);
 
 			const additionalText = document.createElement('div');
-			additionalText.textContent = `Blah Blah Blah - Nothing to See Here!!  🥱`;
+			additionalText.textContent = `Blah Blah Blah - Nothing for You to See Here!!  🥱`;
 
 			additionalText.classList.add('additional-text');
 			themeName.appendChild(additionalText);
