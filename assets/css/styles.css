@@ -1812,9 +1812,7 @@ path#bottom {
 
 	.home__container,
 	.about__container,
-	.mandala-container,
-	.services__container,
-	.projects__container {
+	.mandala-container {
 		grid-template-columns: repeat(2, 1fr);
 		column-gap: 4rem;
 		align-items: center;
@@ -1824,13 +1822,19 @@ path#bottom {
 		/* grid-template-columns: repeat(2, 352px); */
 		grid-template-columns: repeat(2, 1fr);
 		align-items: center;
-		column-gap: 10rem;
+		column-gap: 5rem;
+	}
+
+	.services__container,
+	.projects__container {
+		grid-template-columns: repeat(2, 1fr);
+		align-items: center;
 	}
 
 	.home__data,
 	.about__data,
 	.skills__data,
-	:is(.about__data, .skills__data) :is(.section__subtitle, .section__title) {
+	:is(.about__data, .skills__data, .skills__content) :is(.section__subtitle, .section__title, .skills__description, .skills__group) {
 		text-align: initial;
 	}
 
