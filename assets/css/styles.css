@@ -1774,7 +1774,7 @@ path#bottom {
 }
 
 /* For medium devices */
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 576px) and (max-width: 767px) {
 	.home__container,
 	.about__container,
 	.skills__container,
@@ -1805,7 +1805,7 @@ path#bottom {
 	}
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
 	.nav__menu {
 		width: 55%;
 	}
@@ -1854,7 +1854,7 @@ path#bottom {
 }
 
 /* For large devices */
-@media screen and (min-width: 1023px) {
+@media screen and (min-width: 1024px) and (max-width: 1151px) {
 	.section {
 		padding-block: 7rem 2rem;
 	}
