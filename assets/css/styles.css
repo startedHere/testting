@@ -1822,7 +1822,7 @@ path#bottom {
 		/* grid-template-columns: repeat(2, 352px); */
 		grid-template-columns: repeat(2, 1fr);
 		align-items: center;
-		column-gap: 5rem;
+		column-gap: 2rem;
 	}
 
 	.services__container,
@@ -1834,8 +1834,16 @@ path#bottom {
 	.home__data,
 	.about__data,
 	.skills__data,
-	:is(.about__data, .skills__data, .skills__content) :is(.section__subtitle, .section__title, .skills__description, .skills__group) {
+	:is(.about__data, .skills__data) :is(.section__subtitle, .section__title) {
 		text-align: initial;
+	}
+
+	.skills__data,
+	.skills__content,
+	.skills__description,
+	.skills__group {
+		text-align: initial;
+		justify-content: initial;
 	}
 
 	.home__social {
