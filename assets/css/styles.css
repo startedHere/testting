@@ -1822,7 +1822,7 @@ path#bottom {
 		/* grid-template-columns: repeat(2, 352px); */
 		grid-template-columns: repeat(2, 1fr);
 		align-items: center;
-		column-gap: 2rem;
+		column-gap: 4rem;
 	}
 
 	.services__container,
