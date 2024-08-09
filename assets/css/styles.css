@@ -650,6 +650,8 @@ input[type='checkbox']:checked ~ .menu .bottom {
 	background-color: var(--container-color);
 
 	/* display: grid; */
+	/* display: flex; */
+
 	/* grid-template-columns: 100%; */
 
 	align-items: center;
@@ -936,8 +938,10 @@ input[type='checkbox']:checked ~ .menu .bottom {
 }
 
 .mandala-container svg .mandala-ring {
-	transform-origin: 50% 50%;
-	-webkit-transform-origin: 50% 50%;
+	/* transform-origin: 50% 50%; */
+	/* -webkit-transform-origin: 50% 50%; */
+
+	transform-origin: center;
 }
 
 .mandala-container svg > text {
