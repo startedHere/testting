@@ -1963,7 +1963,8 @@ path#bottom {
 	.skills__group {
 		text-align: initial;
 		justify-content: initial;
-		font-size: 0.8rem;
+		/* font-size: 0.8rem; */
+		font-size: var(--h3-font-size);
 		/* justify-content: center; */
 	}
 
