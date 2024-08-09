@@ -1946,6 +1946,9 @@ path#bottom {
 		grid-template-columns: repeat(2, 1fr);
 		/* align-items: center; */
 	}
+	.services__container {
+		align-items: center;
+	}
 
 	.home__data,
 	.about__data,
