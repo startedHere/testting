@@ -1944,7 +1944,7 @@ path#bottom {
 	.services__container,
 	.projects__container {
 		grid-template-columns: repeat(2, 1fr);
-		align-items: center;
+		/* align-items: center; */
 	}
 
 	.home__data,
