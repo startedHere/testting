@@ -1963,18 +1963,19 @@ path#bottom {
 	.skills__group {
 		text-align: initial;
 		justify-content: initial;
+		font-size: 0.8rem;
 		/* justify-content: center; */
 	}
 
 	.skills__content {
 		/* grid-template-columns: 1fr; */
 		grid-template-columns: repeat(2, 1fr);
-		column-gap: 2rem;
+		column-gap: 3rem;
 	}
 
 	.skills__item {
 		/* font-size: 0.8rem; */
-		font-size: 0.7rem;
+		font-size: 0.65rem;
 	}
 
 	.home__social {
