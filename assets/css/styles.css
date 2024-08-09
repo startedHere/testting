@@ -1959,8 +1959,8 @@ path#bottom {
 	.skills__description,
 	.skills__group {
 		text-align: initial;
-		/* justify-content: initial; */
-		justify-content: center;
+		justify-content: initial;
+		/* justify-content: center; */
 	}
 
 	.skills__content {
@@ -1970,7 +1970,8 @@ path#bottom {
 	}
 
 	.skills__item {
-		font-size: 0.8rem;
+		/* font-size: 0.8rem; */
+		font-size: 0.5rem;
 	}
 
 	.home__social {
