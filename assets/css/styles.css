@@ -1964,7 +1964,7 @@ path#bottom {
 		text-align: initial;
 		justify-content: initial;
 		/* font-size: 0.8rem; */
-		font-size: var(--h3-font-size);
+		font-size: var(--normal-font-size);
 		/* justify-content: center; */
 	}
 
