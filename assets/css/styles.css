@@ -1959,12 +1959,14 @@ path#bottom {
 	.skills__description,
 	.skills__group {
 		text-align: initial;
-		justify-content: initial;
+		/* justify-content: initial; */
+		justify-content: center;
 	}
 
 	.skills__content {
 		/* grid-template-columns: 1fr; */
 		grid-template-columns: repeat(2, 1fr);
+		column-gap: 4rem;
 	}
 
 	.skills__item {
@@ -2081,9 +2083,9 @@ path#bottom {
 	.skills__description {
 		margin-bottom: 3rem;
 	}
-	.skills__content {
+	/* .skills__content {
 		column-gap: 8rem;
-	}
+	} */
 	.skills__group {
 		row-gap: 1.5rem;
 	}
