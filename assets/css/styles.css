@@ -847,6 +847,39 @@ input[type='checkbox']:checked ~ .menu .bottom {
 }
 /*_ /////////////////////////////////////////////////////////////////////// */
 
+mandala-container svg {
+	width: 100%;
+	height: auto;
+	max-width: 550px;
+
+	/* height: 500px; */
+	/* Adjust the height as needed */
+
+	/* width: 550px; */
+	/* Adjust the width as needed */
+
+	/* max-width: 100%; */
+
+	/* margin-top: -15%; */
+
+	/* margin-left: 15%; */
+	/* margin-left: auto; */
+
+	font-size: 1.5rem;
+	font-weight: 300;
+	user-select: none;
+	opacity: 0.55;
+	overflow: hidden;
+}
+
+.mandala-container svg .mandala-ring {
+	/* transform-origin: 50% 50%; */
+	/* -webkit-transform-origin: 50% 50%; */
+
+	transform-origin: center;
+	-webkit-transform-origin: center;
+}
+
 .mandala-container.animated .mandala-rotate > svg .mandala-accent-1 {
 	animation: rotation 505s linear infinite;
 	-webkit-animation: rotation 505s linear infinite;
@@ -912,37 +945,38 @@ input[type='checkbox']:checked ~ .menu .bottom {
 /* opacity: 55%; */
 /* } */
 
-.mandala-container svg {
-	width: 100%;
-	height: auto;
-	max-width: 550px;
+/* .mandala-container svg { */
+/* width: 100%; */
+/* height: auto; */
+/* max-width: 550px; */
 
-	/* height: 500px; */
-	/* Adjust the height as needed */
+/* height: 500px; */
+/* Adjust the height as needed */
 
-	/* width: 550px; */
-	/* Adjust the width as needed */
+/* width: 550px; */
+/* Adjust the width as needed */
 
-	/* max-width: 100%; */
+/* max-width: 100%; */
 
-	/* margin-top: -15%; */
+/* margin-top: -15%; */
 
-	/* margin-left: 15%; */
-	/* margin-left: auto; */
+/* margin-left: 15%; */
+/* margin-left: auto; */
 
-	font-size: 1.5rem;
-	font-weight: 300;
-	user-select: none;
-	opacity: 0.55;
-	overflow: hidden;
-}
+/* font-size: 1.5rem; */
+/* font-weight: 300; */
+/* user-select: none; */
+/* opacity: 0.55; */
+/* overflow: hidden; */
+/* } */
 
-.mandala-container svg .mandala-ring {
-	/* transform-origin: 50% 50%; */
-	/* -webkit-transform-origin: 50% 50%; */
+/* .mandala-container svg .mandala-ring { */
+/* transform-origin: 50% 50%; */
+/* -webkit-transform-origin: 50% 50%; */
 
-	transform-origin: center;
-}
+/* transform-origin: center; */
+/* -webkit-transform-origin: center; */
+/* } */
 
 .mandala-container svg > text {
 	fill: var(--mandala-primary);
