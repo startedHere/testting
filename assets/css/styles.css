@@ -1930,11 +1930,11 @@ path#bottom {
 	.about__container {
 		grid-template-columns: repeat(2, 1fr);
 		column-gap: 4rem;
-		/* align-items: center; */
+		align-items: center;
 	}
 	.mandala-container {
 		grid-template-columns: repeat(2, 1fr);
-		column-gap: 4rem;
+		column-gap: 3rem;
 	}
 
 	.skills__container {
@@ -2003,7 +2003,7 @@ path#bottom {
 	.mymind__data,
 	:is(.mymind__data) :is(.section__subtitle, .section__title, .mymind__description) {
 		text-align: initial;
-		font-size: 0.9rem;
+		font-size: 0.7rem;
 	}
 
 	/* .services__container,
