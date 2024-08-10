@@ -1958,6 +1958,7 @@ path#bottom {
 	.skills__data,
 	:is(.about__data, .skills__data) :is(.section__subtitle, .section__title) {
 		text-align: initial;
+		font-size: 0.7rem;
 	}
 
 	.skills__data,
@@ -1966,7 +1967,8 @@ path#bottom {
 	.skills__group {
 		text-align: initial;
 		justify-content: initial;
-		font-size: 0.9rem;
+		/* font-size: 0.9rem; */
+		font-size: 0.7rem;
 		/* font-size: var(--normal-font-size); */
 		/* justify-content: center; */
 	}
