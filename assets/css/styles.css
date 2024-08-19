@@ -1954,6 +1954,9 @@ path#bottom {
 	.services__container {
 		align-items: center;
 	}
+	.services__card {
+		text-align: initial;
+	}
 
 	.home__data,
 	.about__data,
