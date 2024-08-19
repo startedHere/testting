@@ -1957,9 +1957,7 @@ path#bottom {
 
 	.home__data,
 	.about__data {
-		/* .skills__data, */
 		/* :is(.about__data, .skills__data) :is(.section__subtitle, .section__title) { */
-		/* :is(.about__data) :is(.section__subtitle, .section__title) { */
 		text-align: initial;
 		/* text-align: left; */
 		font-size: 0.7rem;
@@ -1967,7 +1965,8 @@ path#bottom {
 
 	.about__data .section__subtitle,
 	.about__data .section__title {
-		text-align: left;
+		/* text-align: left; */
+		text-align: initial;
 	}
 
 	.skills__data,
@@ -2019,7 +2018,13 @@ path#bottom {
 	}
 
 	.mymind__data,
-	:is(.mymind__data) :is(.section__subtitle, .section__title, .mymind__description) {
+	:is(.mymind__data) :is(.section__subtitle, .section__title) {
+		text-align: initial;
+		/* font-size: 0.7rem; */
+	}
+
+	.mymind__data,
+	:is(.mymind__data) :is(.mymind__description) {
 		text-align: initial;
 		font-size: 0.7rem;
 	}
