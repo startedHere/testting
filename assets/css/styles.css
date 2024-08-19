@@ -1984,7 +1984,9 @@ path#bottom {
 	.skills__content {
 		/* grid-template-columns: 1fr; */
 		grid-template-columns: repeat(2, 1fr);
-		column-gap: 3rem;
+		/* column-gap: 3rem; */
+		/* column-gap: 2.5rem; */
+		column-gap: 2rem;
 	}
 
 	.skills__item {
