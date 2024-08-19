@@ -1986,7 +1986,7 @@ path#bottom {
 		grid-template-columns: repeat(2, 1fr);
 		/* column-gap: 6rem; */
 		/* column-gap: 2.5rem; */
-		/* column-gap: 2rem; */
+		column-gap: 2rem;
 	}
 
 	.skills__item {
