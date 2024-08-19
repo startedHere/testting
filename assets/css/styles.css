@@ -1969,6 +1969,12 @@ path#bottom {
 		text-align: initial;
 	}
 
+	.skills__data .section__subtitle,
+	.skills__data .section__title {
+		/* text-align: left; */
+		text-align: initial;
+	}
+
 	.skills__data,
 	.skills__content,
 	.skills__description,
