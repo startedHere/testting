@@ -1941,8 +1941,8 @@ path#bottom {
 		/* grid-template-columns: repeat(2, 352px); */
 		grid-template-columns: repeat(2, 1fr);
 		align-items: center;
-		/* column-gap: 4rem; */
-		column-gap: 3.5rem;
+		column-gap: 4rem;
+		/* column-gap: 3.5rem; */
 	}
 
 	.services__container,
