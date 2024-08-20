@@ -2041,6 +2041,11 @@ path#bottom {
 	.projects__container {
 		grid-template-columns: repeat(2, 352px);
 	} */
+
+	.contactBeta__form .placeholder {
+		top: 2rem;
+		font-size: var(--normal-font-size);
+	}
 }
 
 /* For large devices */
