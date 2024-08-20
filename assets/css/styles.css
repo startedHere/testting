@@ -2043,7 +2043,7 @@ path#bottom {
 	} */
 
 	.contactBeta__form .placeholder {
-		top: 2rem;
+		/* top: 2rem; */
 		font-size: var(--normal-font-size);
 	}
 }
