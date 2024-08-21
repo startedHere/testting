@@ -2030,6 +2030,7 @@ path#bottom {
 	:is(.mymind__data) :is(.section__subtitle, .section__title) {
 		text-align: initial;
 		/* font-size: 0.7rem; */
+		/* font-size: 0.7rem; */
 	}
 
 	.mymind__data,
@@ -2086,6 +2087,24 @@ path#bottom {
 	.about__data {
 		/* text-align: initial; */
 		/* text-align: left; */
+		font-size: var(--normal-font-size);
+	}
+
+	.mymind__data,
+	:is(.mymind__data) :is(.mymind__description) {
+		font-size: var(--normal-font-size);
+	}
+
+	.skills__data,
+	.skills__description {
+		font-size: var(--normal-font-size);
+	}
+
+	.services__card {
+		/* text-align: initial; */
+		padding: 3rem 1.25rem;
+		/* padding: 3rem 1.75rem; */
+		/* font-size: 0.7rem; */
 		font-size: var(--normal-font-size);
 	}
 }
