@@ -2115,8 +2115,8 @@ path#bottom {
 	}
 
 	.home__container {
-		/* grid-template-columns: 455px 550px; */
-		/* column-gap: 7rem; */
+		grid-template-columns: 455px 550px;
+		column-gap: 7rem;
 		padding-block: 2rem 3rem;
 	}
 
