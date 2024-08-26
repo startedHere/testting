@@ -2115,8 +2115,8 @@ path#bottom {
 	}
 
 	.home__container {
-		grid-template-columns: 455px 550px;
-		column-gap: 7rem;
+		/* grid-template-columns: 455px 550px; */
+		/* column-gap: 7rem; */
 		padding-block: 2rem 3rem;
 	}
 
@@ -2128,9 +2128,9 @@ path#bottom {
 		row-gap: 4.5rem;
 		/* row-gap: 2.5rem; */
 	}
-	/* .home__description {
+	.home__description {
 		margin-block: 1.5rem 2.5rem;
-	} */
+	}
 	.home__social {
 		column-gap: 1.5rem;
 	}
@@ -2148,8 +2148,12 @@ path#bottom {
 		margin-bottom: 3rem;
 	}
 
+	.mandala-container {
+		padding-bottom: 1.5rem;
+	}
+
 	.skills__container {
-		grid-template-columns: 340px 425px;
+		/* grid-template-columns: 340px 425px; */
 		column-gap: 10rem;
 		padding-bottom: 4rem;
 	}
@@ -2175,7 +2179,8 @@ path#bottom {
 	}
 
 	.projects__container {
-		grid-template-columns: repeat(3, 345px);
+		/* grid-template-columns: repeat(3, 345px); */
+		grid-template-columns: repeat(3, 350px);
 		row-gap: 3rem;
 		padding-block: 2.5rem 4rem;
 	}
@@ -2198,7 +2203,6 @@ path#bottom {
 	}
 	.contactBeta__textarea {
 		width: 850px;
-		/* height: 200px; */
 	}
 
 	.contactBeta__message {
@@ -2226,7 +2230,8 @@ path#bottom {
 
 	.test__beta {
 		position: relative;
-		left: 15rem;
+		/* left: 15rem; */
+		left: 14rem;
 		top: 5rem;
 	}
 
@@ -2236,6 +2241,42 @@ path#bottom {
 		/* margin-bottom: 1rem; */
 		left: -28rem;
 		top: 18rem;
+	}
+
+	.footer {
+		padding-block: 4.5rem 4rem;
+		/* padding-block: 5rem 5rem; */
+	}
+	.footer__container {
+		grid-template-columns: repeat(2, 1fr);
+		align-items: center;
+		text-align: initial;
+	}
+	.footer__title {
+		font-size: var(--bigger-font-size);
+	}
+
+	.footer__social {
+		/* align-items: right; */
+		/* (wont work because of => (display: flex:)) */
+
+		/* justify-content: right; */
+		justify-self: flex-end;
+		column-gap: 1.5rem;
+		margin-bottom: 2rem;
+	}
+	.footer__copy {
+		/* text-align: initial; */
+		/* justify-self: flex-end; */
+
+		/* position: absolute; */
+		/* right: 10rem; */
+		/* margin-top: 3.5rem; */
+		margin-top: 5rem;
+	}
+
+	.scrollup {
+		right: 3rem;
 	}
 }
 
