@@ -1641,7 +1641,8 @@ span.feedback:after {
 	fill: none;
 	stroke-width: 4px;
 	stroke-linecap: round;
-	stroke: #1ecd97;
+	/* stroke: #1ecd97; */
+	stroke: var(--first-color);
 	stroke-dashoffset: 0px;
 }
 
@@ -1750,7 +1751,8 @@ path#bottom {
 }
 
 .loading-end .test__beta-svg rect {
-	fill: #1ecd97 !important;
+	/* fill: #1ecd97 !important; */
+	fill: var(--first-color) !important;
 }
 /*! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
@@ -1791,7 +1793,9 @@ path#bottom {
 	padding: 0.5rem;
 	color: var(--title-color);
 	font-size: 1.5rem;
-	clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+	/* clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); */
+	clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+	border-radius: 5px;
 	transition: transform 0.4s;
 }
 

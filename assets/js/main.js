@@ -863,3 +863,19 @@ document.addEventListener('DOMContentLoaded', () => {
 		themeIcon.className = isLightTheme ? 'ri-sun-line change-theme' : 'ri-moon-line change-theme';
 	});
 });
+
+//! ScrollReveal Animation
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const scrollR = ScrollReveal({
+	origin: 'top',
+	distance: '60px',
+	duration: 2500,
+	delay: 400,
+	reset: true, // Repeats the Animation
+});
+
+scrollR.reveal(`.home__data, .home__social, .contactBeta__form, .footer__container`);
+scrollR.reveal(`.home__image`, { origin: 'bottom' });
+scrollR.reveal(`.about__data, .mymind__data, .skills__data`, { origin: 'left' });
+scrollR.reveal(`.about__image, .skills__content`, { origin: 'right' });
+scrollR.reveal(`.services__card, .projects__card`, { interval: 100 });
