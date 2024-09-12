@@ -741,7 +741,8 @@ input[type='checkbox']:checked ~ .menu .bottom {
 		transform: rotate(0deg);
 	}
 	to {
-		transform: rotate(1turn);
+		/* transform: rotate(1turn); */
+		transform: rotate(360deg);
 	}
 }
 
@@ -751,7 +752,7 @@ input[type='checkbox']:checked ~ .menu .bottom {
 		-webkit-transform: rotate(0deg);
 	}
 	to {
-		-webkit-transform: rotate(1turn);
+		-webkit-transform: rotate(360deg);
 	}
 }
 /* _ /////////////////////////////////////////////////////// */
